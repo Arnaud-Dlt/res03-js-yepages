@@ -5,7 +5,7 @@ import { UserManager } from './classes/userManager.js';
 
 window.addEventListener("DOMContentLoaded", function (){
     
-    let users = [];
+/*    let users = [];
     let user1 = new User(0, "Maurice", "email1@gmail.com", "azerty", "Maurice", "Dupont", "profileImage");
     let user2 = new User(1, "Jean", "email2@gmail.com", "uiop", "Jean", "Dupond", "profileImage");
     let user3 = new User(2, "Michel", "email3@gmail.com", "qsdfg", "Michel", "Dupons", "profileImage");
@@ -45,22 +45,35 @@ window.addEventListener("DOMContentLoaded", function (){
         let parseData = JSON.parse(booksStorage[i]);
         let newBook = new Book(parseData.id, parseData.title, parseData.author, parseData.publicationDate, parseData.totalPages, parseData.excerpt, parseData.coverImage);
         newBooks.push(newBook);
-    }
+    }*/
     
-    let register = document.getElementById("register");
-    let inputemail = document.getElementById("email");
-    let emailValue = inputemail.value;
+    let newUser=new UserManager();
     
-    register.addEventListener("submit", function(event) {
+    let formRegister = document.getElementById("formRegister");
+    
+    formRegister.addEventListener("submit", function(event){
         event.preventDefault();
-        for (let i = 0; i < this.users.length; i++) {
-            if (emailValue === this.users[i].email) {
-                alert("Email déjà utilisé");
-            }
-            else {
-                register.createUser();
-            }
-        }
+        
+        let newUsername = document.getElementById("username");
+        let newUserEmail = document.getElementById("email");
+        let newUserPassword = document.getElementById("password");
+        let newUserConfirmPwd = document.getElementById("confirmPwd");
+        let newUserFirstName = document.getElementById("firstName");
+        let newUserLastName = document.getElementById("lastName");
+        let newUserProfileImage = document.getElementById("profilImg");
+        
+        formRegister.createUser(newUsername, newUserEmail, newUserPassword, newUserFirstName, newUserLastName, newUserProfileImage);
+        console.log(newUser.createUser);
     });
+    
+    
+    
+    let formConnect = document.getElementById("formConnect");
+    
+    formConnect.addEventListener("submit", function(event){
+        
+    });
+    
+    
     
 })

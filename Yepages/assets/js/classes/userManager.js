@@ -2,6 +2,7 @@ import { User } from './user.js';
 
 class UserManager {
     #users;
+    
     constructor(users) {
         this.#users = users;
     }
@@ -48,7 +49,15 @@ class UserManager {
     }
 
     createUser(user) {
-        this.#users.push(user);
+        for(let i = 0; i < this.#users.length; i++) {
+            if(this.#users[i].email !== user.email) {
+                this.#users.push(user);
+            }
+
+            else {
+                alert(`Cet email : ${user.email} est déja utilisé !`);
+            }
+        }
     }
 
     deleteUser(userId) {
@@ -83,21 +92,7 @@ class UserManager {
     }
     
     login(username, email) {
-    
-        let register = document.getElementById("register");
-        let inputemail = document.getElementById("email");
-        let emailValue = inputemail.value;
-    
-        register.addEventListener("submit", function() {
-            for (let i = 0; i < this.#users.length; i++) {
-                if (emailValue === this.#users[i].email) {
-                    alert("Email déjà utilisé");
-                }
-                else {
-                    createUser();
-                }
-            }
-        })
+        
     }
 }
 export { UserManager };

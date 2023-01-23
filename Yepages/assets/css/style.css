@@ -18,6 +18,7 @@ body main section form fieldset {
 }
 body main section h2 {
   text-align: center;
+  border-bottom: 1px solid #000;
 }
 
 /*# sourceMappingURL=style.css.map */

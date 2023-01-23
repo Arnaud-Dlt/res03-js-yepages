@@ -26,7 +26,7 @@
     <main>
         <section>
             <h2>Connexion</h2>
-            <form id="connect">
+            <form id="formConnect">
                 <fieldset>
                     <label>Email : </label>
                     <input type="text" name="email" >
@@ -40,10 +40,10 @@
         </section>
         <section>
             <h2>Inscription</h2>
-            <form id="register">
+            <form id="formRegister">
                 <fieldset>
                     <label>Username : </label>
-                    <input type="text" name="username" >
+                    <input type="text" name="username" id="username">
                 </fieldset>
                 <fieldset>
                     <label>Email : </label>
@@ -51,23 +51,23 @@
                 </fieldset>
                 <fieldset>
                     <label>Mot de passe : </label>
-                    <input type="password" name="pwd" >
+                    <input type="password" name="pwd" id="password">
                 </fieldset>
                 <fieldset>
                     <label>Confirmer le Mot de passe : </label>
-                    <input type="password" name="confirm-pwd" >
+                    <input type="password" name="confirm-pwd"  id="confirmPwd">
                 </fieldset>
                 <fieldset>
                     <label>Prénom: </label>
-                    <input type="text" name="firstname" >
+                    <input type="text" name="firstname" id="firstname">
                 </fieldset>
                 <fieldset>
                     <label>Nom : </label>
-                    <input type="text" name="lastname" >
+                    <input type="text" name="lastname" id="lastname">
                 </fieldset>
                 <fieldset>
                     <label>Image de profil : </label>
-                    <input type="file" name="profil-img">
+                    <input type="file" name="profil-img" id="profilImg">
                 </fieldset>
                 <input type="submit" name="submit">
             </form>
