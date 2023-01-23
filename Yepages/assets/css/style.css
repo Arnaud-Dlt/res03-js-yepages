@@ -1,0 +1,9 @@
+body {
+  display: grid;
+  grid-template-rows: 10vh 85vh 5vh;
+}
+body header {
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */
