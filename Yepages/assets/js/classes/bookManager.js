@@ -78,7 +78,7 @@ class BookManager {
     }
     
     editBook(book) {
-        for (let i = 0; i < this.#books; i++) {
+        for (let i = 0; i < this.#books.length; i++) {
             if (this.#books[i].id === book.id) {
                 this.#books[i] = book;
             }

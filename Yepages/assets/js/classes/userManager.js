@@ -54,12 +54,13 @@ class UserManager {
     deleteUser(userId) {
         for (let i = 0; i < this.#users.length; i++) {
             if (this.#users[i].id === userId) {
-                this.#users.remove(users[i]);
+                this.#users.splice(users[i]);
             }
         }
     }
+    
     editUser(user) {
-        for (let i = 0; i < this.#users; i++) {
+        for (let i = 0; i < this.#users.length; i++) {
             if (this.#users[i].id === user.id) {
                 this.#users[i] = user;
             }
@@ -69,6 +70,7 @@ class UserManager {
         let jsonUser = JSON.stringify(users);
         sessionStorage.setItem("users", jsonUser);
     }
+    
     load() {
         let usersStorage = JSON.parse(sessionStorage.getItem("users"));
         let newUsers = [];
@@ -78,6 +80,24 @@ class UserManager {
             let newUser = new User(parseData.id, parseData.username, parseData.email, parseData.password, parseData.firstName, parseData.lastName, parseData.profileImage);
             newUsers.push(newUser);
         }
+    }
+    
+    login(username, email) {
+    
+        let register = document.getElementById("register");
+        let inputemail = document.getElementById("email");
+        let emailValue = inputemail.value;
+    
+        register.addEventListener("submit", function() {
+            for (let i = 0; i < this.#users.length; i++) {
+                if (emailValue === this.#users[i].email) {
+                    alert("Email déjà utilisé");
+                }
+                else {
+                    createUser();
+                }
+            }
+        })
     }
 }
 export { UserManager };

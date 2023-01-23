@@ -47,4 +47,20 @@ window.addEventListener("DOMContentLoaded", function (){
         newBooks.push(newBook);
     }
     
+    let register = document.getElementById("register");
+    let inputemail = document.getElementById("email");
+    let emailValue = inputemail.value;
+    
+    register.addEventListener("submit", function(event) {
+        event.preventDefault();
+        for (let i = 0; i < this.users.length; i++) {
+            if (emailValue === this.users[i].email) {
+                alert("Email déjà utilisé");
+            }
+            else {
+                register.createUser();
+            }
+        }
+    });
+    
 })

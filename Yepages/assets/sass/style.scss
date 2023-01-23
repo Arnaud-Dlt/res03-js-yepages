@@ -8,4 +8,21 @@ body {
             
         }
     }
+    
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        section {
+            box-shadow: 1px 2px 10px #000;
+            margin: 20px;
+            form {
+                fieldset {
+                    border: none;
+                }
+            }
+            h2 {
+                text-align: center;
+            }
+        }
+    }
 }
