@@ -47,7 +47,7 @@ window.addEventListener("DOMContentLoaded", function (){
         newBooks.push(newBook);
     }*/
     
-    let newUser=new UserManager();
+    let newUserManager=new UserManager();
     
     let formRegister = document.getElementById("formRegister");
     
@@ -61,12 +61,14 @@ window.addEventListener("DOMContentLoaded", function (){
         let newUserFirstName = document.getElementById("firstName");
         let newUserLastName = document.getElementById("lastName");
         let newUserProfileImage = document.getElementById("profilImg");
+        let id = newUserManager.users.length+1;
+
+        let newUser = new User(id , newUsername, newUserEmail, newUserPassword, newUserConfirmPwd, newUserFirstName, newUserLastName, newUserProfileImage );
         
-        formRegister.createUser(newUsername, newUserEmail, newUserPassword, newUserFirstName, newUserLastName, newUserProfileImage);
-        console.log(newUser.createUser);
+        newUserManager.createUser(newUser);
+        console.log(newUserManager.users);
+        newUserManager.save();
     });
-    
-    
     
     let formConnect = document.getElementById("formConnect");
     

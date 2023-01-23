@@ -55,7 +55,7 @@ class UserManager {
             }
 
             else {
-                alert(`Cet email : ${user.email} est déja utilisé !`);
+                alert(`Cet email est déja utilisé !`);
             }
         }
     }
@@ -92,7 +92,16 @@ class UserManager {
     }
     
     login(username, email) {
-        
+        if (this.#users.length > 0) {
+            for (let i = 0; i < this.#users.length; i++) {
+                if (email === this.#users[i].email && password === this.#ûsers[i].password) {
+                    alert(`Bonjour ${this.#users[i].username}`)
+                }
+            }
+        }
+        else {
+            alert("Identifiants inconnus");
+        }
     }
 }
 export { UserManager };

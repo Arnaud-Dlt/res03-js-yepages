@@ -15,6 +15,11 @@
     <meta property="og:image" content="">
     <meta property="og:description" content="">
     <meta property="og:locale" content="fr_FR">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Yepages</title>
 </head>
@@ -29,13 +34,13 @@
             <form id="formConnect">
                 <fieldset>
                     <label>Email : </label>
-                    <input type="text" name="email" >
+                    <input type="text" placeholder="Email" name="email" >
                 </fieldset>
                 <fieldset>
                     <label>Mot de passe : </label>
-                    <input type="password" name="mdp" >
+                    <input type="password" placeholder="Mot de passe" name="mdp" >
                 </fieldset>
-                <input type="submit" name="submit">
+                <input type="submit" name="submit" class="submit">
             </form>
         </section>
         <section>
@@ -43,33 +48,33 @@
             <form id="formRegister">
                 <fieldset>
                     <label>Username : </label>
-                    <input type="text" name="username" id="username">
+                    <input type="text" name="username" placeholder="Username" id="username">
                 </fieldset>
                 <fieldset>
                     <label>Email : </label>
-                    <input type="text" name="email" id="email" >
+                    <input type="text" name="email" placeholder="Email" id="email" >
                 </fieldset>
                 <fieldset>
                     <label>Mot de passe : </label>
-                    <input type="password" name="pwd" id="password">
+                    <input type="password" name="pwd" placeholder="Mot de passe" id="password">
                 </fieldset>
                 <fieldset>
                     <label>Confirmer le Mot de passe : </label>
-                    <input type="password" name="confirm-pwd"  id="confirmPwd">
+                    <input type="password" name="confirm-pwd" placeholder="Confirmer le mot de passe"  id="confirmPwd">
                 </fieldset>
                 <fieldset>
                     <label>Prénom: </label>
-                    <input type="text" name="firstname" id="firstname">
+                    <input type="text" name="firstname" placeholder="Prenom" id="firstname">
                 </fieldset>
                 <fieldset>
                     <label>Nom : </label>
-                    <input type="text" name="lastname" id="lastname">
+                    <input type="text" name="lastname" placeholder="Nom" id="lastname">
                 </fieldset>
                 <fieldset>
                     <label>Image de profil : </label>
                     <input type="file" name="profil-img" id="profilImg">
                 </fieldset>
-                <input type="submit" name="submit">
+                <input type="submit" name="submit" class="submit">
             </form>
         </section>
     </main>
