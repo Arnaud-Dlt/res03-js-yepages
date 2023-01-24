@@ -14,9 +14,9 @@ window.addEventListener("DOMContentLoaded", function (){
     users.push(user2);
     users.push(user3);
     let jsonUser = JSON.stringify(users);
-    sessionStorage.setItem("users", jsonUser);
+    localStorage.setItem("users", jsonUser);
     
-    let usersStorage = JSON.parse(sessionStorage.getItem("users"));
+    let usersStorage = JSON.parse(localStorage.getItem("users"));
     let newUsers = [];
     
     for(let i = 0; i < usersStorage.length; i++) {
@@ -36,9 +36,9 @@ window.addEventListener("DOMContentLoaded", function (){
     books.push(book3);
     
     let jsonBook = JSON.stringify(books);
-    sessionStorage.setItem("books", jsonBook);
+    localStorage.setItem("books", jsonBook);
     
-    let booksStorage = JSON.parse(sessionStorage.getItem("books"));
+    let booksStorage = JSON.parse(localStorage.getItem("books"));
     let newBooks = [];
     
     for(let i = 0 ; i < booksStorage.length; i++) {
@@ -47,9 +47,9 @@ window.addEventListener("DOMContentLoaded", function (){
         newBooks.push(newBook);
     }*/
     
-    let newUserManager = new UserManager();
+    let newUserManager = new UserManager([]);
     
-    newUserManager.load();
+    //newUserManager.load();
     
     console.log(newUserManager);
     
@@ -58,16 +58,16 @@ window.addEventListener("DOMContentLoaded", function (){
     formRegister.addEventListener("submit", function(event){
         event.preventDefault();
         
-        let newUsername = document.getElementById("username");
-        let newUserEmail = document.getElementById("email");
-        let newUserPassword = document.getElementById("password");
-        let newUserConfirmPwd = document.getElementById("confirmPwd");
-        let newUserFirstName = document.getElementById("firstName");
-        let newUserLastName = document.getElementById("lastName");
-        let newUserProfileImage = document.getElementById("profilImg");
-        let id = newUserManager.users.length+1;
+        let newUsername = document.getElementById("username").value;
+        let newUserEmail = document.getElementById("email").value;
+        let newUserPassword = document.getElementById("password").value;
+        let newUserConfirmPwd = document.getElementById("confirmPwd").value;
+        let newUserFirstName = document.getElementById("firstname").value;
+        let newUserLastName = document.getElementById("lastname").value;
+        let newUserProfileImage = document.getElementById("profilImg").value;
+        let id = newUserManager.users.length +1;
 
-        let newUser = new User(id , newUsername, newUserEmail, newUserPassword, newUserConfirmPwd, newUserFirstName, newUserLastName, newUserProfileImage );
+        let newUser = new User(id , newUsername, newUserEmail, newUserPassword, newUserFirstName, newUserLastName, newUserProfileImage );
         
         newUserManager.createUser(newUser);
         console.log(newUserManager.users);
@@ -79,10 +79,10 @@ window.addEventListener("DOMContentLoaded", function (){
     formConnect.addEventListener("submit", function(event){
         event.preventDefault();
         
-        let connectEmail=document.getElementById("connectEmail");
-        let connectPassword=document.getElementById("connectPassword");
+        let connectEmail=document.getElementById("connectEmail").value;
+        let connectPassword=document.getElementById("connectPassword").value;
         
-        console.log(formConnect.login(connectEmail,connectPassword));
+        newUserManager.login();
     });
     
     

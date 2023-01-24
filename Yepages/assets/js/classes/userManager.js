@@ -4,7 +4,7 @@ class UserManager {
     #users;
     
     constructor(users) {
-        this.#users = [];
+        this.#users = users;
     }
 
     get users() {
@@ -39,13 +39,30 @@ class UserManager {
             }
         }
     }
-
+    
     createUser(user) {
-        for(let i = 0; i < this.#users.length; i++) {
-            if(this.#users[i].email !== user.email) {
-                this.#users.push(user);
+        let state = false;
+        let confirmpassword = document.getElementById("confirmPwd").value;
+
+        for (let i = 0; i < this.#users.length; i++) {
+            if (this.#users[i].email === user.email) {
+                state = true
             }
 
+        };
+
+        if (state === false) {
+
+            if (user.password !== "" && user.password === confirmpassword) {
+                this.#users.push(user);
+            }
+            else {
+                alert("Les mots de passe sont différents");
+            }
+
+        }
+        else {
+            alert(`Désolé l'email : ${user.email} est déja utilisé !`);
         }
     }
 
@@ -64,20 +81,20 @@ class UserManager {
             }
         }
     }
+    
     save() {
-        let jsonUser = JSON.stringify(users);
-        sessionStorage.setItem("users", jsonUser);
+        let jsonUser = JSON.stringify(this.#users);
+        localStorage.setItem("users", jsonUser);
     }
     
     load() {
-        let usersStorage = JSON.parse(sessionStorage.getItem("users"));
-        let newUsers = [];
-
+        let usersStorage = JSON.parse(localStorage.getItem("users"));
         for (let i = 0; i < usersStorage.length; i++) {
             let parseData = JSON.parse(usersStorage[i]);
             let newUser = new User(parseData.id, parseData.username, parseData.email, parseData.password, parseData.firstName, parseData.lastName, parseData.profileImage);
             this.#users.push(newUser);
         }
+        
     }
     
     login(username, email) {
