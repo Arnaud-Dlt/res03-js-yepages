@@ -1,32 +1,69 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
 body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+#home {
   display: grid;
   grid-template-rows: 10vh 85vh 5vh;
   background-color: #36494E;
   font-family: "Cinzel";
 }
-body header {
+#home header {
   text-align: center;
 }
-body header h1 {
+#home header h1 {
   font-size: 2rem;
   font-weight: 700;
   text-decoration: underline;
   color: #A9CEF4;
 }
-body main {
+#home main {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-body main section {
+#home main section {
   box-shadow: 1px 1px 10px #000000;
   margin: 20px;
   color: #A9CEF4;
   border-radius: 10px;
 }
-body main section form fieldset {
+#home main section form fieldset {
   border: none;
 }
-body main section h2 {
+#home main section h2 {
   text-align: center;
   border-bottom: 1px solid #A9CEF4;
 }

@@ -1,4 +1,6 @@
-body {
+@import "reset";
+
+#home {
     display: grid;
     grid-template-rows: 10vh 85vh 5vh;
     background-color:#36494E;
@@ -39,4 +41,8 @@ body {
             }
         }
     }
+}
+
+#userAdmin {
+    
 }
