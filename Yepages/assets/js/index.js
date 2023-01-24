@@ -47,7 +47,11 @@ window.addEventListener("DOMContentLoaded", function (){
         newBooks.push(newBook);
     }*/
     
-    let newUserManager=new UserManager();
+    let newUserManager = new UserManager();
+    
+    newUserManager.load();
+    
+    console.log(newUserManager);
     
     let formRegister = document.getElementById("formRegister");
     
@@ -73,7 +77,12 @@ window.addEventListener("DOMContentLoaded", function (){
     let formConnect = document.getElementById("formConnect");
     
     formConnect.addEventListener("submit", function(event){
+        event.preventDefault();
         
+        let connectEmail=document.getElementById("connectEmail");
+        let connectPassword=document.getElementById("connectPassword");
+        
+        console.log(formConnect.login(connectEmail,connectPassword));
     });
     
     

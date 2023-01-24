@@ -24,9 +24,6 @@ class BookManager {
             if(this.#books[i].id === id) {
                 return this.#books[i];
             }
-            else {
-                return null;
-            }
         }
     }
 
@@ -37,9 +34,6 @@ class BookManager {
             if (this.#books[i].title === title) {
                 return booksTitle.push(this.#books[i]);
             }
-            else {
-                return null;
-            }
         }
     }
     
@@ -49,9 +43,6 @@ class BookManager {
             if (this.#books[i].author === author) {
                 return booksAuthor.push(this.#books[i]);
             }
-            else {
-                return null;
-            }
         }
     }
     findBooksByPublicationsYear(year) {
@@ -59,9 +50,6 @@ class BookManager {
         for (let i = 0; i < this.#books.length; i++) {
             if (this.#books[i].publicationDate === year) {
                 return booksYear.push(this.#books[i]);
-            }
-            else {
-                return null;
             }
         }
     }

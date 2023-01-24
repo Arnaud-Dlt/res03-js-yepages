@@ -4,7 +4,7 @@ class UserManager {
     #users;
     
     constructor(users) {
-        this.#users = users;
+        this.#users = [];
     }
 
     get users() {
@@ -16,12 +16,10 @@ class UserManager {
     }
 
     findUserById(id) {
+        
         for (let i = 0; i < this.#users.length; i++) {
             if (this.#users[i].id === id) {
                 return this.#users[i];
-            }
-            else {
-                return null;
             }
         }
     }
@@ -31,9 +29,6 @@ class UserManager {
             if (this.#users[i].username === username) {
                 return this.#users[i];
             }
-            else {
-                return null;
-            }
         }
     }
 
@@ -41,9 +36,6 @@ class UserManager {
         for (let i = 0; i < this.#users.length; i++) {
             if (this.#users[i].email === email) {
                 return this.#users[i];
-            }
-            else {
-                return null;
             }
         }
     }
@@ -54,16 +46,13 @@ class UserManager {
                 this.#users.push(user);
             }
 
-            else {
-                alert(`Cet email est déja utilisé !`);
-            }
         }
     }
 
     deleteUser(userId) {
         for (let i = 0; i < this.#users.length; i++) {
             if (this.#users[i].id === userId) {
-                this.#users.splice(users[i]);
+                this.#users.slice(users[i]);
             }
         }
     }
@@ -87,15 +76,18 @@ class UserManager {
         for (let i = 0; i < usersStorage.length; i++) {
             let parseData = JSON.parse(usersStorage[i]);
             let newUser = new User(parseData.id, parseData.username, parseData.email, parseData.password, parseData.firstName, parseData.lastName, parseData.profileImage);
-            newUsers.push(newUser);
+            this.#users.push(newUser);
         }
     }
     
     login(username, email) {
         if (this.#users.length > 0) {
             for (let i = 0; i < this.#users.length; i++) {
-                if (email === this.#users[i].email && password === this.#ûsers[i].password) {
+                if (email === this.#users[i].email && password === this.#users[i].password) {
                     alert(`Bonjour ${this.#users[i].username}`)
+                }
+                else {
+                    alert("Identifiants inconnus");
                 }
             }
         }
